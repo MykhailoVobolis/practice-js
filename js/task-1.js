@@ -1,7 +1,61 @@
-function makeTransaction(quantity, pricePerDroid) {
-    return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
+// Сумма всех чисел до заданного number
+
+function calculateTotal(number) {
+  let sum = 0;
+  let p = 0;
+  while (p <= number) {
+    sum = sum + p;
+    p += 1;
+    // можно применять p++
+  }
+  return sum;
 }
 
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+console.log(calculateTotal(1));
+console.log(calculateTotal(3));
+console.log(calculateTotal(0));
+console.log(calculateTotal(18));
+console.log(calculateTotal(24));
+console.log(calculateTotal());
+
+// Сумма всех чисел до заданного number через for
+
+function calculateTotal(number) {
+  let summ = 0;
+  for (let index = 0; index <= number; index++) {
+    summ = summ + index;
+  }
+  return summ;
+}
+
+console.log(calculateTotal(1));
+console.log(calculateTotal(0));
+console.log(calculateTotal(7));
+console.log(calculateTotal(18));
+console.log(calculateTotal(24));
+console.log(calculateTotal());
+
+// Сумма четных чисел
+
+function calculateEvenTotal(number) {
+  let summa = 0;
+  for (let index = 0; index <= number; index++) {
+    if (index % 2 == 0) {
+      summa = summa + index;
+    } else {
+      summa = summa + 0;
+    }
+  }
+  return summa;
+}
+
+console.log(calculateEvenTotal(1));
+console.log(calculateEvenTotal(3));
+console.log(calculateEvenTotal(7));
+console.log(calculateEvenTotal(18));
+console.log(calculateEvenTotal(27));
+console.log(calculateEvenTotal());
+
+// let x = 1
+// x %= 2
+// console.log(x)
