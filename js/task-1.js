@@ -59,3 +59,15 @@ console.log(calculateEvenTotal());
 // let x = 1
 // x %= 2
 // console.log(x)
+
+const start = 6;
+const end = 17;
+let number;
+for (let index = start; index <= end; index++) {
+  if (index % 5 === 0) {
+    number = index;
+    break;
+  }
+}
+
+console.log(number);
