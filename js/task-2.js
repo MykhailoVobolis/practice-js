@@ -142,13 +142,93 @@
 // console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
 // console.log(calculateTotalPrice([]));
 
-function createReversedArray() {
-  let args = Array.from(arguments);
-  const reversedArray = args.toReversed();
-  return reversedArray;
+// function createReversedArray() {
+//   let args = Array.from(arguments);
+//   const reversedArray = args.toReversed();
+//   return reversedArray;
+// }
+
+// console.log(createReversedArray(12, 85, 37, 4));
+// console.log(createReversedArray(164, 48, 291));
+// console.log(createReversedArray(412, 371, 94, 63, 176));
+// console.log(createReversedArray());
+
+//  Використовуючи if...else напиши код, який буде запитувати у користувача "Яка офіційна назва JavaScript?".
+//    Якщо користувач вводить "ECMAScript", то показати за допомогою alert("Вірно!")
+//    У інших випадках показати "Не знаєте? ECMAScript!"
+
+// let message = prompt('Яка офіційна назва JavaScript?');
+// if (message.toLowerCase() === 'ECMAScript'.toLowerCase()) {
+//   alert('Вірно!');
+// } else {
+//   alert('Не знаєте? ECMAScript!');
+// }
+
+//  Напишіть цикл, який виводить у консоль числа від max до min у порядку зменшення.
+// У консоль виведіть усі парні числа від max  до min
+
+// const max = 50;
+// const min = 23;
+
+// for (let i = max; i >= min; i--) {
+//   if (i % 2 === 0) {
+//     console.log(i);
+//   }
+// }
+
+// При завантаженні сторінки користувачу пропонується у prompt ввести число.
+//     Те, що вводить користувач, додається до значення змінної total.
+// Операція вводу числа триває до тих пір, поки користувач не натисне кнопку Cancel в prompt.
+// Після того, як користувач припинив вводити числа і натиснув на кнопку Cancel,
+//     показувати alert з рядком "Загальна сума введених чисел дорівнює [число]."
+// Робити перевірку, що користувач ввів саме число, а не довільні символи, не потрібно.
+
+// let message = prompt('Введіть число');
+// let total = 0;
+// do {
+//   total += Number(message);
+//   message = prompt('Введіть число');
+// } while (message !== null);
+
+// alert(`Загальна сума введених чисел дорівнює ${total}`);
+
+//Напиши код, який буде запитувати логін за допомогою prompt та логувати результат у консоль браузера.
+// Якщо користувач вводить "Адмін", то prompt запитує пароль.Якщо нічого не введено або натиснута клавіша Esc,
+//     вивести рядок "Відмінено"
+//     У іншому випадку вивести рядок "Я вас не знаю!"
+
+// Пароль перевіряти так:
+// якщо введено пароль "Я головний", то вивести "Вітаю!",
+//     у іншому випадку виводити рядок "Невірний пароль!".
+
+const userImput = prompt(`Введіть логін`);
+if (userImput === 'Адмін') {
+  const userPassword = prompt(`Введіть пароль`);
+  if (userPassword === 'Я головний') {
+    console.log('Вітаю!');
+  } else {
+    console.log('Невірний пароль!');
+  }
+} else if (!userImput) {
+  console.log('Відмінено');
+} else {
+  console.log('Я вас не знаю!');
 }
 
-console.log(createReversedArray(12, 85, 37, 4));
-console.log(createReversedArray(164, 48, 291));
-console.log(createReversedArray(412, 371, 94, 63, 176));
-console.log(createReversedArray());
+//Дано рядок, який складається із символів.Наприклад, 'abcde'.
+//     Перевірте, що першим символом цього рядка є літера 'a'.
+//  Якщо це так - вивести "так", у іншому випадку вивести "ні"
+
+// const string = 'abcde';
+// const string2 = 'bcde';
+
+// function name(str, symbol) {
+//   if (str[0] === symbol) {
+//     return 'так';
+//   } else {
+//     return 'ні';
+//   }
+// }
+
+// console.log(name(string, '10'));
+// console.log(name(string2, 'c'));
