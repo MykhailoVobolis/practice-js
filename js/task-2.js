@@ -418,7 +418,8 @@ function calculateTotalPrice(productName) {
 
   let total;
   for (let i of products) {
-    if (Object.values(i).includes(productName)) {
+    if (i.name === productName) {
+      // if (Object.values(i).includes(productName))
       total = i.price * i.quantity;
       return total;
     } else {
@@ -433,3 +434,15 @@ console.log(calculateTotalPrice('Radar'));
 console.log(calculateTotalPrice('Droid'));
 console.log(calculateTotalPrice('Grip'));
 console.log(calculateTotalPrice('Scanner'));
+
+function add(...args) {
+  let sum = 0;
+  for (let i of args) {
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(add(15, 27));
+console.log(add(12, 4, 11, 48));
+console.log(add(32, 6, 13, 19, 8));
