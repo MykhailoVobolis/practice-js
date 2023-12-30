@@ -408,41 +408,392 @@
 
 // Якщо продукту з такою назвою немає, то функція повинна повертати рядок "Product <productName> not found!" , де <productName> — це ім'я товару.
 
-function calculateTotalPrice(productName) {
-  const products = [
-    { name: 'Radar', price: 1300, quantity: 4 },
-    { name: 'Scanner', price: 2700, quantity: 3 },
-    { name: 'Droid', price: 400, quantity: 7 },
-    { name: 'Grip', price: 1200, quantity: 9 },
-  ];
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: 'Radar', price: 1300, quantity: 4 },
+//     { name: 'Scanner', price: 2700, quantity: 3 },
+//     { name: 'Droid', price: 400, quantity: 7 },
+//     { name: 'Grip', price: 1200, quantity: 9 },
+//   ];
 
-  let total;
-  for (let i of products) {
-    if (i.name === productName) {
-      // if (Object.values(i).includes(productName))
-      total = i.price * i.quantity;
-      return total;
-    } else {
-      total = `Product ${productName} not found!`;
-    }
-  }
-  return total;
-}
+//   let total;
+//   for (let i of products) {
+//     if (i.name === productName) {
+//       // if (Object.values(i).includes(productName))
+//       total = i.price * i.quantity;
+//       return total;
+//     } else {
+//       total = `Product ${productName} not found!`;
+//     }
+//   }
+//   return total;
+// }
 
-console.log(calculateTotalPrice('Blaster'));
-console.log(calculateTotalPrice('Radar'));
-console.log(calculateTotalPrice('Droid'));
-console.log(calculateTotalPrice('Grip'));
-console.log(calculateTotalPrice('Scanner'));
+// console.log(calculateTotalPrice('Blaster'));
+// console.log(calculateTotalPrice('Radar'));
+// console.log(calculateTotalPrice('Droid'));
+// console.log(calculateTotalPrice('Grip'));
+// console.log(calculateTotalPrice('Scanner'));
 
-function add(...args) {
-  let sum = 0;
-  for (let i of args) {
-    sum += i;
-  }
-  return sum;
-}
+// function add(...args) {
+//   let sum = 0;
+//   for (let i of args) {
+//     sum += i;
+//   }
+//   return sum;
+// }
 
-console.log(add(15, 27));
-console.log(add(12, 4, 11, 48));
-console.log(add(32, 6, 13, 19, 8));
+// console.log(add(15, 27));
+// console.log(add(12, 4, 11, 48));
+// console.log(add(32, 6, 13, 19, 8));
+
+// function greet(name) {
+//   return `Welcome ${name}!`;
+// }
+
+// console.log(greet);
+// console.log(greet('Mango'));
+
+// Перебираючий метод масиву
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// // Класичний for
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Index ${i}, value ${numbers[i]}`);
+// }
+
+// // Перебираючий метод forEach
+// numbers.forEach(function (number, index) {
+//   console.log(`Index ${index}, value ${number}`);
+// });
+
+// function changeEven(numbers, value) {
+//   let newArray = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       newArray.push(numbers[i] + value);
+//     } else {
+//       newArray.push(numbers[i]);
+//     }
+//   }
+//   return newArray;
+// }
+
+// console.log(changeEven([1, 2, 3, 4, 5], 10));
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
+// console.log(changeEven([17, 24, 68, 31, 42], 100));
+// console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
+
+// const planets = ['Earth', 'Mars', 'Venus', 'Jupiter'];
+
+// const planetsLengths = planets.map(planet => planet.length);
+
+// console.log(planetsLengths);
+
+// // Задачка на массив email
+
+// const getUserEmails = users => {
+//   const usersMail = users.map(mail => mail.email);
+//   return usersMail;
+// };
+
+// console.log(
+//   getUserEmails([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       skills: ['ipsum', 'lorem'],
+//       gender: 'male',
+//       age: 37,
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//       gender: 'female',
+//       age: 34,
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//       gender: 'male',
+//       age: 24,
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       skills: ['adipisicing', 'irure', 'velit'],
+//       gender: 'female',
+//       age: 21,
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       skills: ['ex', 'culpa', 'nostrud'],
+//       gender: 'male',
+//       age: 27,
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       skills: ['non', 'amet', 'ipsum'],
+//       gender: 'male',
+//       age: 38,
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       skills: ['lorem', 'veniam', 'culpa'],
+//       gender: 'female',
+//       age: 39,
+//     },
+//   ])
+// );
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: 'Mango', score: 83 },
+//   { name: 'Poly', score: 59 },
+//   { name: 'Ajax', score: 37 },
+//   { name: 'Kiwi', score: 94 },
+//   { name: 'Houston', score: 64 },
+// ];
+
+// const best = students.filter(student => student.score >= HIGH_SCORE);
+// console.log(best); // Масив об'єктів з іменами Mango і Kiwi
+
+// const worst = students.filter(student => student.score < LOW_SCORE);
+// console.log(worst); // Масив з одним об'єктом Ajax
+
+// // У колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Масив об'єктів з іменами Poly і Houston
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+// ];
+// const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+// const AUTHOR = 'Robert Sheckley';
+
+// const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+// const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+// console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+// const isEveryUserActive = users => {
+//   const activeUsers = users.every(user => user.isActive === true);
+//   return activeUsers;
+// };
+
+// console.log(
+//   isEveryUserActive([
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//     },
+//   ])
+// );
+
+// const total = [2, 7, 3].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// console.log(total); // 12
+
+// const books = [
+//   {
+//     title: 'The Last Kingdom',
+//     author: 'Bernard Cornwell',
+//     rating: 8.38,
+//   },
+//   {
+//     title: 'Beside Still Waters',
+//     author: 'Robert Sheckley',
+//     rating: 8.51,
+//   },
+//   {
+//     title: 'The Dream of a Ridiculous Man',
+//     author: 'Fyodor Dostoevsky',
+//     rating: 7.75,
+//   },
+//   {
+//     title: 'Redder Than Blood',
+//     author: 'Tanith Lee',
+//     rating: 7.94,
+//   },
+//   {
+//     title: 'Enemy of God',
+//     author: 'Bernard Cornwell',
+//     rating: 8.67,
+//   },
+// ];
+
+// const sortedByAuthorName = books.toSorted((firstAuthor, secondAuthor) =>
+//   firstAuthor.author.localeCompare(secondAuthor.author)
+// );
+
+// const sortedByReversedAuthorName = books.toSorted((firstAuthor, secondAuthor) =>
+//   secondAuthor.author.localeCompare(firstAuthor.author)
+// );
+
+// const sortedByAscendingRating = books.toSorted(
+//   (firstRating, secondRating) => firstRating.rating - secondRating.rating
+// );
+
+// const sortedByDescentingRating = books.toSorted(
+//   (firstRating, secondRating) => secondRating.rating - firstRating.rating
+// );
+
+// console.log(sortedByAuthorName);
+// console.log(sortedByReversedAuthorName);
+// console.log(sortedByAscendingRating);
+// console.log(sortedByDescentingRating);
+
+// const password = 'true';
+// const myKey = password;
+
+// const obj = {
+//   [myKey]: false,
+// };
+
+// console.log(obj);
+
+const books = [
+  {
+    title: 'The Last Kingdom',
+    author: 'Bernard Cornwell',
+    rating: 8.38,
+  },
+  {
+    title: 'Beside Still Waters',
+    author: 'Robert Sheckley',
+    rating: 8.51,
+  },
+  {
+    title: 'The Dream of a Ridiculous Man',
+    author: 'Fyodor Dostoevsky',
+    rating: 7.75,
+  },
+  { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+  {
+    title: 'The Dreams in the Witch House',
+    author: 'Howard Lovecraft',
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+
+const names = books
+  .filter(bookRating => bookRating.rating > MIN_BOOK_RATING)
+  .map(book => book.author)
+  .toSorted();
+
+console.log(names);
