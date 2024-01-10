@@ -2,17 +2,22 @@
 
 'use strict';
 
-// создание массива
+// создание массива чисел
+let testArray = [];
+function calculateArray() {
+  for (let index = 0; index < 1000000; index++) {
+    let element = Math.round(Math.random() * 112) + index;
 
-function calculateArray(x) {
-  let testArray = [];
-  for (let index = 0; index < 100000; index++) {
-    let element = Math.round(Math.random() * 100);
     testArray.push(element);
   }
   return testArray;
 }
 console.log(calculateArray());
+
+// создание массива уникальных элементов
+const uniqueNames = new Set(testArray);
+const newTestArray = Array.from(uniqueNames);
+console.log(newTestArray);
 
 // НАИБОЛИШЕЕ ЧИСЛО МАССИВА
 
@@ -25,15 +30,7 @@ const maxArrayElement = numberArray => {
   }`;
 };
 
-// console.log(maxArrayElement());
-
-console.log(
-  maxArrayElement([
-    19, 48, 34, 20, 5, 10, 489, 499, 38, 47, 598, 192, 109, 701, 498, 93, 93,
-    399, 192, 499, 92, 0, 325, 532, 183, 621, 184, 619, 172, 398, 308, 298, 698,
-    700, 583, 568, 342, 432,
-  ])
-);
+console.log(maxArrayElement(newTestArray));
 
 const t4 = performance.now();
 console.log('Call to doSomething took ' + (t4 - t3) + ' milliseconds.');
@@ -44,22 +41,16 @@ const t0 = performance.now();
 
 const elementsArray = numbers => {
   let newNumberArray = numbers;
+  console.log(newNumberArray);
   while (newNumberArray.length >= 2) {
-    let numberNew = newNumberArray[Math.round(newNumberArray.length / 2)];
+    let numberNew = newNumberArray[Math.round((newNumberArray.length - 1) / 2)];
     newNumberArray = newNumberArray.filter(element => element > numberNew);
+    // console.log(newNumberArray);
   }
   return `Наибольшее число массива: ${newNumberArray}`;
 };
 
-// console.log(elementsArray());
-
-console.log(
-  elementsArray([
-    19, 48, 34, 20, 5, 10, 489, 499, 38, 47, 598, 192, 109, 701, 498, 93, 93,
-    399, 192, 499, 92, 0, 325, 532, 183, 621, 184, 619, 172, 398, 308, 298, 698,
-    700, 583, 568, 342, 432,
-  ])
-);
+console.log(elementsArray(newTestArray));
 
 const t1 = performance.now();
 console.log('Call to doSomething took ' + (t1 - t0) + ' milliseconds.');
