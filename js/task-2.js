@@ -15,9 +15,16 @@ function calculateArray() {
 console.log(calculateArray());
 
 // создание массива уникальных элементов
+
 const uniqueNames = new Set(testArray);
 const newTestArray = Array.from(uniqueNames);
 console.log(newTestArray);
+
+// !!! работает на мальньких массивах !!!
+
+// const newTestArray = testArray.filter(
+//   (currentValue, index, array) => array.indexOf(currentValue) === index
+// );
 
 // НАИБОЛИШЕЕ ЧИСЛО МАССИВА
 

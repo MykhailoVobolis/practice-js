@@ -71,3 +71,21 @@ for (let index = start; index <= end; index++) {
 }
 
 console.log(number);
+
+const players = [
+  { name: 'Mango', playtime: 1270, gamesPlayed: 4 },
+  { name: 'Poly', playtime: 469, gamesPlayed: 2 },
+  { name: 'Ajax', playtime: 690, gamesPlayed: 3 },
+  { name: 'Kiwi', playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = players.reduce((timeGames, players) => {
+  return timeGames + players.playtime / players.gamesPlayed;
+}, 0);
+
+console.log(totalAveragePlaytimePerGame);
+
+const heading = document.createElement('h1');
+heading.classList.add('title');
+heading.textContent = 'This is a heading';
+console.log(heading);
